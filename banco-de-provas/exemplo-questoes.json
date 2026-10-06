@@ -1,0 +1,12 @@
+[
+  { "temas": ["álgebra", "equações"], "dificuldade": "fácil", "fonte": "Prova 1 - 2023",
+    "enunciado": "Resolva a equação 2x + 3 = 7.", "alternativas": ["x = 1", "x = 2", "x = 3", "x = 4"], "gabarito": "1" },
+  { "temas": ["álgebra"], "dificuldade": "média", "fonte": "Prova 1 - 2023",
+    "enunciado": "Qual é a soma das raízes de x² − 5x + 6 = 0?", "alternativas": ["3", "5", "6", "−5"], "gabarito": "1" },
+  { "temas": ["geometria"], "dificuldade": "fácil", "fonte": "Prova 2 - 2023",
+    "enunciado": "Qual é a área de um triângulo de base 6 cm e altura 4 cm?", "alternativas": ["10 cm²", "12 cm²", "24 cm²", "20 cm²"], "gabarito": "1" },
+  { "temas": ["geometria", "trigonometria"], "dificuldade": "difícil", "fonte": "Prova 2 - 2023",
+    "enunciado": "Em um triângulo retângulo, a hipotenusa mede 10 e um ângulo agudo mede 30°. Quanto mede o cateto oposto a esse ângulo?", "alternativas": ["5", "5√3", "10", "10√3"], "gabarito": "0" },
+  { "temas": ["funções"], "dificuldade": "média", "fonte": "Prova 3 - 2024",
+    "enunciado": "Explique a diferença entre uma função injetora e uma função sobrejetora.", "alternativas": [], "gabarito": "Injetora: elementos distintos têm imagens distintas. Sobrejetora: o contradomínio é igual à imagem." }
+]

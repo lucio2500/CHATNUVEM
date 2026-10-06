@@ -1,0 +1,40 @@
+:root { --cor: #2b5fd9; --borda: #d5d9e0; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #1c2230; background: #f5f6f8; }
+header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding: 10px 20px; background: #fff; border-bottom: 1px solid var(--borda); }
+header h1 { font-size: 1.2rem; margin: 0; }
+nav { display: flex; gap: 6px; flex: 1; flex-wrap: wrap; }
+nav button.ativa { background: var(--cor); color: #fff; border-color: var(--cor); }
+button { padding: 6px 12px; border: 1px solid var(--borda); background: #fff; border-radius: 6px; cursor: pointer; font: inherit; }
+button.primario { background: var(--cor); color: #fff; border-color: var(--cor); }
+main { max-width: 960px; margin: 20px auto; padding: 0 16px; }
+.filtros, .barra { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; background: #fff; padding: 12px; border: 1px solid var(--borda); border-radius: 8px; margin-bottom: 12px; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; }
+.barra label:has(input[type=checkbox]) { flex-direction: row; align-items: center; }
+input, select, textarea { font: inherit; padding: 6px; border: 1px solid var(--borda); border-radius: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip { padding: 3px 10px; border: 1px solid var(--borda); border-radius: 999px; cursor: pointer; user-select: none; background: #fff; }
+.chip.on { background: var(--cor); color: #fff; border-color: var(--cor); }
+.q { display: flex; gap: 10px; background: #fff; border: 1px solid var(--borda); border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+.q .corpo { flex: 1; }
+.q .meta { font-size: .8rem; color: #667; margin-top: 6px; }
+.tag { background: #eaf0ff; color: #2b4aa0; border-radius: 4px; padding: 1px 6px; margin-right: 4px; }
+.erro { color: #b00020; }
+form#form-q { display: grid; gap: 10px; max-width: 640px; }
+dialog { border: 1px solid var(--borda); border-radius: 10px; padding: 20px; }
+dialog form { display: grid; gap: 10px; min-width: 280px; }
+.folha-q { margin: 0 0 14px; break-inside: avoid; }
+.folha-q ol { list-style: upper-alpha; margin: 6px 0 0; padding-left: 28px; }
+#folha { background: #fff; padding: 32px 40px; border: 1px solid var(--borda); border-radius: 4px; }
+#folha h1 { text-align: center; margin: 0 0 4px; font-size: 1.4rem; }
+#folha .sub { text-align: center; margin: 0 0 8px; color: #555; }
+#folha .cab { display: flex; justify-content: space-between; border-bottom: 1px solid #000; padding: 8px 0; margin-bottom: 18px; }
+#folha .gab { break-before: page; }
+[hidden] { display: none !important; }
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  main { margin: 0; max-width: none; padding: 0; }
+  #folha { border: 0; padding: 0; }
+  @page { margin: 18mm; }
+}

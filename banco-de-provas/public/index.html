@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco de Provas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="no-print">
+  <h1>📚 Banco de Provas</h1>
+  <nav>
+    <button data-aba="banco" class="ativa">Banco de questões</button>
+    <button data-aba="prova">Minha prova (<span id="qtd">0</span>)</button>
+    <button data-aba="salvas">Provas salvas</button>
+    <button data-aba="cadastro">Cadastrar / importar</button>
+  </nav>
+  <div id="conta"></div>
+</header>
+
+<main>
+  <section id="aba-banco" class="no-print">
+    <div class="filtros">
+      <div>
+        <strong>Temas</strong>
+        <div id="temas" class="chips"></div>
+      </div>
+      <label>Dificuldade
+        <select id="f-dif"><option value="">todas</option><option>fácil</option><option>média</option><option>difícil</option></select>
+      </label>
+      <label>Busca <input id="f-q" placeholder="texto do enunciado"></label>
+      <button id="sel-todas">Selecionar todas as exibidas</button>
+    </div>
+    <p id="resumo"></p>
+    <div id="lista"></div>
+  </section>
+
+  <section id="aba-prova" hidden>
+    <div class="no-print barra">
+      <label>Título <input id="titulo" value="Prova"></label>
+      <label>Instituição/turma <input id="subtitulo" placeholder="opcional"></label>
+      <label><input type="checkbox" id="embaralhar"> Embaralhar questões</label>
+      <label><input type="checkbox" id="com-gabarito"> Incluir gabarito no final</label>
+      <button id="btn-salvar">Salvar prova</button>
+      <button id="btn-imprimir" class="primario">🖨️ Imprimir / salvar PDF</button>
+    </div>
+    <article id="folha"></article>
+  </section>
+
+  <section id="aba-salvas" hidden class="no-print"><div id="salvas"></div></section>
+
+  <section id="aba-cadastro" hidden class="no-print">
+    <h2>Nova questão</h2>
+    <form id="form-q">
+      <label>Enunciado <textarea name="enunciado" rows="3" required></textarea></label>
+      <label>Alternativas (uma por linha; deixe vazio para questão dissertativa) <textarea name="alternativas" rows="4"></textarea></label>
+      <label>Gabarito (número da alternativa correta: 1 = A, ou a resposta esperada) <input name="gabarito"></label>
+      <label>Temas (separados por vírgula) <input name="temas" required placeholder="álgebra, equações"></label>
+      <label>Dificuldade <select name="dificuldade"><option>fácil</option><option selected>média</option><option>difícil</option></select></label>
+      <label>Prova de origem <input name="fonte" placeholder="Prova 1 - 2024"></label>
+      <button class="primario">Salvar questão</button>
+    </form>
+    <h2>Importar várias de uma vez (JSON)</h2>
+    <p>Formato: lista de objetos com <code>enunciado</code>, <code>alternativas</code>, <code>gabarito</code> (índice base 0), <code>temas</code>, <code>dificuldade</code>, <code>fonte</code>. Veja <code>exemplo-questoes.json</code>.</p>
+    <input type="file" id="arq-json" accept=".json">
+    <p id="msg-import"></p>
+  </section>
+</main>
+
+<dialog id="dlg-login">
+  <form method="dialog" id="form-login">
+    <h2 id="login-titulo">Entrar</h2>
+    <label id="l-nome" hidden>Nome <input name="nome"></label>
+    <label>E-mail <input name="email" type="email" required></label>
+    <label>Senha <input name="senha" type="password" required minlength="6"></label>
+    <p id="login-erro" class="erro"></p>
+    <button class="primario">Continuar</button>
+    <button type="button" id="alterna">Criar conta</button>
+    <button type="button" id="fecha-login">Cancelar</button>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
